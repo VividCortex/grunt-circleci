@@ -17,6 +17,18 @@ Checker = function (token, username, project, options) {
     });
 };
 
+Object.defineProperty(Checker, 'defaultOptions', {
+    enumerable: true,
+    configurable: false,
+    writable: false,
+    value: {
+        branch: 'master',
+        sleepTime: 2e4, // Waits 20 seconds
+        timeout: 10 * 60 * 1e3, // 10 minutes timeout
+        waitOnRunning: false // Fail if running
+    }
+});
+
 Checker.prototype = Object.create(Object.prototype, {
     hasOption: {
         value: function (name) {
