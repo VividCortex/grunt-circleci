@@ -20,7 +20,7 @@ module.exports = {
 
                     return deferred.promise.finally(afterPromise);
                 }
-            }
+            };
         };
 
         afterPromise = function () { };
@@ -36,7 +36,7 @@ module.exports = {
     tearDown: function (done) {
         checker = null;
         deferreds.length = 0;
-        done()
+        done();
     },
 
 
@@ -134,7 +134,7 @@ module.exports = {
                 var deferred = deferreds.shift();
 
                 if (!!deferred) {
-                    resolutionsCount++;
+                    resolutionsCount += 1;
                     deferred.resolve([{vcs_revision: 'commit', status: statuses.shift()}]);
                 }
             }, 0);

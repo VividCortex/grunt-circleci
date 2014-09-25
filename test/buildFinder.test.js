@@ -7,7 +7,7 @@ var BuildFinder = require('../tasks/lib/buildFinder'),
 
 module.exports = {
     setUp: function (done) {
-        finder = new BuildFinder([{vcs_revision: 'hashofthecommit'}])
+        finder = new BuildFinder([{vcs_revision: 'hashofthecommit'}]);
         done();
     },
 
