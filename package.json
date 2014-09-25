@@ -29,6 +29,7 @@
     "grunt-contrib-clean": "^0.5.0",
     "grunt-contrib-jshint": "^0.9.2",
     "grunt-contrib-nodeunit": "^0.3.3",
+    "grunt-gitinfo": "^0.1.6",
     "sandboxed-module": "^1.0.1"
   },
   "peerDependencies": {
