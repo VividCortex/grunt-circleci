@@ -159,7 +159,7 @@ module.exports = {
         checker = new StatusChecker('invalidToken', 'username', 'project', {
             branch: 'branch',
             retryOnRunning: true,
-            sleepTime: 100,
+            retryAfter: 100,
             timeout: 300
         });
 

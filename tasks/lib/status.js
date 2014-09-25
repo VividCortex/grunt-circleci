@@ -23,7 +23,7 @@ Object.defineProperty(Checker, 'defaultOptions', {
     writable: false,
     value: {
         branch: 'master',       // The branch to filter by
-        sleepTime: 2e4,         // Waits 20 seconds
+        retryAfter: 2e4,        // Retry after 20 seconds
         timeout: 10 * 60 * 1e3, // 10 minutes timeout
         retryOnRunning: false   // Fail if running
     }
@@ -114,7 +114,7 @@ Checker.prototype = Object.create(Object.prototype, {
                     }
 
                     // Sleep for 10 seconds by default
-                    sleep(checker.getOption('sleepTime'));
+                    sleep(checker.getOption('retryAfter'));
 
                     return checker.checkCommit(commit, until);
                 }, this.handleError);
