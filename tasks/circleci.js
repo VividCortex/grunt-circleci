@@ -15,7 +15,7 @@ function sleep(seconds) {
 }
 
 module.exports = function (grunt) {
-    var StatusChecker = require('../status');
+    var StatusChecker = require('./lib/status');
 
     function getConfig(key) {
         return grunt.config.get('circleci.' + key);

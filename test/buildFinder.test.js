@@ -1,7 +1,7 @@
 'use strict';
 
-var BuildFinder = require('../src/buildFinder'),
-    Build       = require('../src/build'),
+var BuildFinder = require('../tasks/lib/buildFinder'),
+    Build       = require('../tasks/lib/build'),
     finder;
 
 

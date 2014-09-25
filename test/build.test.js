@@ -1,6 +1,6 @@
 'use strict';
 
-var Build = require('../src/build');
+var Build = require('../tasks/lib/build');
 
 
 module.exports = {

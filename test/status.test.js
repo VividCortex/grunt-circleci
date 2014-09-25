@@ -24,7 +24,7 @@ module.exports = {
         };
 
         afterPromise = function () { };
-        StatusChecker = SandboxedModule.require('../src/status', {
+        StatusChecker = SandboxedModule.require('../tasks/lib/status', {
             requires: {circleci: circleci, './sleep': function () {}}
         });
 
