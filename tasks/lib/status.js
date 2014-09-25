@@ -37,9 +37,9 @@ Checker.prototype = Object.create(Object.prototype, {
     },
 
     getOption: {
-        value: function (name, defaultValue) {
+        value: function (name) {
             if (!this.hasOption(name)) {
-                return defaultValue;
+                return Checker.defaultOptions[name];
             }
 
             return this.options[name];
@@ -84,7 +84,7 @@ Checker.prototype = Object.create(Object.prototype, {
         value: function (commit, until) {
             var checker = this;
 
-            until = !isNaN(until) ? until : (new Date()).getTime() + (this.getOption('timeout', 600));
+            until = !isNaN(until) ? until : (new Date()).getTime() + (this.getOption('timeout'));
 
             if ((new Date()).getTime() > until) {
                 return this.handleError('Timeout');
@@ -109,12 +109,12 @@ Checker.prototype = Object.create(Object.prototype, {
                 .then(function (build) {
                     if (build.isSuccess()) {
                         return true;
-                    } else if (build.isFailure() || !checker.getOption('waitOnRunning', false)) {
+                    } else if (build.isFailure() || !checker.getOption('waitOnRunning')) {
                         return checker.handleError('Invalid status for CircleCI build: "' + build.getStatus() + '"')
                     }
 
                     // Sleep for 10 seconds by default
-                    sleep(checker.getOption('sleepTime', 1e4));
+                    sleep(checker.getOption('sleepTime'));
 
                     return checker.checkCommit(commit, until);
                 }, this.handleError);
