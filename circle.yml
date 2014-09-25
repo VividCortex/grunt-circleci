@@ -1,0 +1,14 @@
+machine:
+
+  node:
+    version: 0.10.22
+
+dependencies:
+
+  pre:
+    - npm install -p
+
+test:
+
+  pre:
+    - ./node_modules/grunt-cli/bin/grunt jshint
