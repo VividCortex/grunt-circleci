@@ -32,7 +32,7 @@ module.exports = function (grunt) {
             username: 'VividCortex',
             project: 'ng-app',
             options: {
-                waitOnRunning: true
+                retryOnRunning: true
             }
         },
 

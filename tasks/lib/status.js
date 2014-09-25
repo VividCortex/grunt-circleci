@@ -22,10 +22,10 @@ Object.defineProperty(Checker, 'defaultOptions', {
     configurable: false,
     writable: false,
     value: {
-        branch: 'master',
-        sleepTime: 2e4, // Waits 20 seconds
+        branch: 'master',       // The branch to filter by
+        sleepTime: 2e4,         // Waits 20 seconds
         timeout: 10 * 60 * 1e3, // 10 minutes timeout
-        waitOnRunning: false // Fail if running
+        retryOnRunning: false   // Fail if running
     }
 });
 
@@ -109,7 +109,7 @@ Checker.prototype = Object.create(Object.prototype, {
                 .then(function (build) {
                     if (build.isSuccess()) {
                         return true;
-                    } else if (build.isFailure() || !checker.getOption('waitOnRunning')) {
+                    } else if (build.isFailure() || !checker.getOption('retryOnRunning')) {
                         return checker.handleError('Invalid status for CircleCI build: "' + build.getStatus() + '"')
                     }
 

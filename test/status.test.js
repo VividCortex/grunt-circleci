@@ -127,7 +127,7 @@ module.exports = {
             resolutionsCount = 0,
             timeout;
 
-        checker = new StatusChecker('invalidToken', 'username', 'project', {branch: 'branch', waitOnRunning: true});
+        checker = new StatusChecker('invalidToken', 'username', 'project', {branch: 'branch', retryOnRunning: true});
 
         afterPromise = function () {
             timeout = setTimeout(function () {
@@ -158,7 +158,7 @@ module.exports = {
 
         checker = new StatusChecker('invalidToken', 'username', 'project', {
             branch: 'branch',
-            waitOnRunning: true,
+            retryOnRunning: true,
             sleepTime: 100,
             timeout: 300
         });
