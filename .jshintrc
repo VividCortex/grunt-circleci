@@ -1,0 +1,35 @@
+{
+    "indent": 4,
+    "node": true,
+    "white": true,
+    "onevar": true,
+    "nomen": false,
+
+    "bitwise": true,
+    "curly": true,
+    "eqeqeq": true,
+    "forin": true,
+    "immed": true,
+    "latedef": true,
+    "newcap": true,
+    "noarg": true,
+    "noempty": true,
+    "nonew": true,
+    "plusplus": true,
+    "undef": true,
+    "unused": true,
+    "strict": true,
+    "trailing": true,
+
+    "globals": {
+        "console": true,
+        "expect": true,
+        "inject": true,
+        "describe": true,
+        "it": true,
+        "jasmine": true,
+        "beforeEach": true,
+        "afterEach": true,
+        "spyOn": true
+    }
+}
