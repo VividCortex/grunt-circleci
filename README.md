@@ -40,12 +40,36 @@ grunt.initConfig({
 
 The following options allow to customize the behaviour of the status check:
 
-* __branch:__ The branch to filter builds by. _Default:_ `master`
-* __retryOnRunning:__ Whether the check should retry or not if the build is currently running. _Default:_ `false`
-* __retryAfter:__ The time in milliseconds the check should wait to retry if _retryOnRunning_ is enabled. _Default:_ `20000` (20 seconds)
-* __timeout:__ The time in milliseconds the check should fail if the build is still running and _retryOnRunning_ is enabled. _Default:_ `600000` (10 minutes)
+#### options.branch
 
-#### Full example
+Type `String`
+Default: `master`
+
+The branch name to filter builds by.
+
+#### options.retryOnRunning
+
+Type `Boolean`
+Default: `false`
+
+Whether the check should retry or not if the build is currently running.
+
+#### options.retryAfter
+
+Type `Number`
+Default: `20000` (20 seconds)
+
+The time in milliseconds the check should wait to retry if _retryOnRunning_ is enabled.
+
+#### options.timeout
+
+Type `Number`
+Default: `600000` (10 minutes)
+
+The time in milliseconds the check should fail if the build is still running and _retryOnRunning_ is enabled.
+
+
+### Full example
 
 ```js
 grunt.initConfig({
