@@ -1,7 +1,7 @@
 # grunt-circleci ![Build Status](https://circleci.com/gh/VividCortex/grunt-circleci.svg?circle-token=ffc337cb4ff22c2f70947954886e9012e0f2468f)
 
 
-This plugin allows to check the status of a CircleCI build associated to a commit. Useful for apps the need to check for a successful status before running a critical task, like the deploy.
+This plugin allows to check the status of a CircleCI build associated to a commit. Useful for apps that need to check for a successful status before running a critical task, like the deploy.
 
 
 ## Getting started
@@ -45,7 +45,7 @@ The following options allow to customize the behaviour of the status check:
 Type `String`
 Default: `master`
 
-The branch name to filter builds by.
+The name of the branch by which to filter the builds.
 
 #### options.retryOnRunning
 
@@ -66,7 +66,7 @@ The time in milliseconds the check should wait to retry if _retryOnRunning_ is e
 Type `Number`
 Default: `600000` (10 minutes)
 
-The time in milliseconds the check should fail if the build is still running and _retryOnRunning_ is enabled.
+The time in milliseconds after which the check should fail if the build is still running and _retryOnRunning_ is enabled.
 
 
 ### Full example
