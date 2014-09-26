@@ -1,5 +1,6 @@
 'use strict';
 
+var q = require('q');
 
 /**
  * Sleeps for N milliseconds
@@ -7,10 +8,11 @@
  * @param {Number} milliseconds
  */
 module.exports = function (milliseconds) {
-    var future = (new Date()).getTime() + milliseconds;
+    var deferred = q.defer();
 
-    // Do nothing
-    while (future > (new Date()).getTime()) {
-        /* jshint noempty: false */
-    }
+    setTimeout(function () {
+        deferred.resolve(1);
+    }, milliseconds);
+
+    return deferred.promise;
 };

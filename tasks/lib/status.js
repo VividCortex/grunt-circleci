@@ -114,9 +114,11 @@ Checker.prototype = Object.create(Object.prototype, {
                     }
 
                     // Sleep for 10 seconds by default
-                    sleep(checker.getOption('retryAfter'));
+                    var promise = sleep(checker.getOption('retryAfter'));
 
-                    return checker.checkCommit(commit, until);
+                    return promise.then(function () {
+                        return checker.checkCommit(commit, until);
+                    });
                 }, this.handleError);
         }
     }

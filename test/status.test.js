@@ -25,7 +25,15 @@ module.exports = {
 
         afterPromise = function () { };
         StatusChecker = SandboxedModule.require('../tasks/lib/status', {
-            requires: {circleci: circleci, './sleep': function () {}}
+            requires: {
+                circleci: circleci, './sleep': function () {
+                    return {
+                        then: function (callback) {
+                            return callback();
+                        }
+                    };
+                }
+            }
         });
 
         checker = new StatusChecker('invalidToken', 'username', 'project', {branch: 'branch'});
@@ -144,7 +152,7 @@ module.exports = {
 
         checker.checkCommit('commit').then(function (result) {
             test.strictEqual(result, true, 'should return TRUE');
-            test.strictEqual(resolutionsCount, 3, 'the number of resolutions should be 4');
+            test.strictEqual(resolutionsCount, 3, 'the number of resolutions should be 3');
         }).finally(function () {
             test.done();
             clearTimeout(timeout);
