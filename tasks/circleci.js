@@ -1,19 +1,5 @@
 'use strict';
 
-/**
- * Sleeps for N seconds
- *
- * @param {Number} seconds
- */
-function sleep(seconds) {
-    var future = (new Date()).getTime() + (seconds * 1e3);
-
-    // Do nothing
-    while (future > (new Date()).getTime()) {
-        /* jshint noempty: false */
-    }
-}
-
 module.exports = function (grunt) {
     var StatusChecker = require('./lib/status');
 
