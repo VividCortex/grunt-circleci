@@ -1,4 +1,4 @@
-# grunt-circleci
+# grunt-circleci ![Build Status](https://circleci.com/gh/VividCortex/grunt-circleci.svg?circle-token=ffc337cb4ff22c2f70947954886e9012e0f2468f)
 
 
 This plugin allows to check the status of a CircleCI build associated to a commit. Useful for apps the need to check for a successful status before running a critical task, like the deploy.
