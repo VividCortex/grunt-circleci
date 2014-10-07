@@ -1,19 +1,22 @@
 # grunt-circleci [![Circle CI](https://circleci.com/gh/VividCortex/grunt-circleci.png?style=badge)](https://circleci.com/gh/VividCortex/grunt-circleci)
 
 
-This plugin allows to check the status of a CircleCI build associated to a commit. Useful for apps that need to check for a successful status before running a critical task, like the deploy.
+This plugin allows to check the status of a CircleCI build associated to a commit. Useful for apps that need to check for a successful status before running a critical task, like the app deploy.
 
 
 ## Getting started
 
-First, you need to add the dependency and install it into your project.
+This plugin requires Grunt `~0.4.0`
+
+If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```js
 npm install grunt-circleci --save-dev
 ```
 
 
-Once intalled, it can be loaded in your _Gruntfile_ with the follwing line:
+Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
+
 ```js
 grunt.loadNpmTasks('grunt-circleci');
 ```
