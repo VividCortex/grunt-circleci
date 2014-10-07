@@ -120,8 +120,7 @@ grunt circleci --commit=TheHashOfTheCommit
 
 ### Combination with a git plugin
 
-There is a very useful plugin for git that allows to fetch some information about your repository. It's called [grunt-gitinfo](https://www.npmjs.org/package/grunt-gitinfo).
-This way, you would be able to check the status for the latest commit.
+[grunt-gitinfo](https://www.npmjs.org/package/grunt-gitinfo) is a very useful plugin for grunt that allows to fetch some information about your GIT repository. By using it, you would be able to check the status for the latest commit.
 
 ```js
 grunt.initConfig({
