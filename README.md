@@ -118,5 +118,33 @@ and run the command as:
 grunt circleci --commit=TheHashOfTheCommit
 ```
 
+### Combination with a git plugin
+
+There is a very useful plugin for git that allows to fetch some information about your repository. It's called [grunt-gitinfo](https://www.npmjs.org/package/grunt-gitinfo).
+This way, you would be able to check the status for the latest commit.
+
+```js
+grunt.initConfig({
+  // ...
+  gitinfo: {},
+
+  circleci: {
+    // ...
+    // Use the commit hash
+    commit:   '<%= gitinfo.local.branch.current.SHA %>'
+  }  
+});
+
+
+// Get the repo information before checking the status
+grunt.registerTask('check-build', ['gitinfo', 'circleci']);
+```
+
+And then, run the following command to check the status:
+
+```
+grunt check-build
+```
+
 ## License
 Copyright (c) 2014 VividCortex. Licensed under the MIT license.
