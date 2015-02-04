@@ -18,6 +18,20 @@ module.exports = {
         test.done();
     },
 
+    'running on status "queued"': function (test) {
+        var build = new Build({status: 'queued'});
+
+        test.strictEqual(build.isRunning(), true, 'should report as running when status is "queued"');
+        test.done();
+    },
+
+    'running on status "not_running"': function (test) {
+        var build = new Build({status: 'not_running'});
+
+        test.strictEqual(build.isRunning(), true, 'should report as running when status is "not_running"');
+        test.done();
+    },
+
     'success on status "success"': function (test) {
         var build = new Build({status: 'success'});
 
