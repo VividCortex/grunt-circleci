@@ -26,7 +26,7 @@ Build.prototype.getStatus = function () {
  * @returns {boolean}
  */
 Build.prototype.isRunning = function () {
-    return -1 !== ['running', 'scheduled'].indexOf(this.getStatus());
+    return -1 !== ['running', 'scheduled', 'queued', 'not_running'].indexOf(this.getStatus());
 };
 
 /**
