@@ -32,9 +32,12 @@
     "sandboxed-module": "^1.0.1"
   },
   "peerDependencies": {
-    "grunt": "~0.4.5"
+    "grunt": ">=0.4.0"
   },
-  "keywords": ["gruntplugin", "circleci"],
+  "keywords": [
+    "gruntplugin",
+    "circleci"
+  ],
   "dependencies": {
     "circleci": "^0.1.1",
     "q": "^1.0.1"
