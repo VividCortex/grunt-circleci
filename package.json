@@ -1,7 +1,7 @@
 {
   "name": "grunt-circleci",
   "description": "Grunt plugin to check CircleCI build status",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "homepage": "https://github.com/VividCortex/grunt-circleci",
   "author": "VividCortex",
   "repository": {
@@ -40,6 +40,7 @@
   ],
   "dependencies": {
     "circleci": "^0.1.1",
+    "grunt-bump": "^0.8.0",
     "q": "^1.0.1"
   }
 }
