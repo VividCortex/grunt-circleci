@@ -14,24 +14,25 @@ BuildFinder = function (builds) {
 };
 
 /**
- * Finds a build by the vcs revision
+ * Finds builds by the vcs revision
  *
  * @param {String} commit The commit hash
- * @returns {Build|null}
+ * @returns {Array|null}
  */
-BuildFinder.prototype.findByCommit = function (commit) {
-    var activeBuilds = this.builds.filter(function (build) {
-        return commit === build.vcs_revision;
-    });
+ BuildFinder.prototype.findByCommit = function (commit) {
+     var activeBuilds = this.builds.filter(function (build) {
+         return commit === build.vcs_revision;
+     });
 
-    // Check if there are matching builds
-    if (!activeBuilds.length) {
-        return null;
-    }
+     // Check if there are matching builds
+     if (!activeBuilds.length) {
+         return null;
+     }
 
-    // get the first matching build
-    return new Build(activeBuilds.shift());
-};
+     return activeBuilds.map(function (activeBuild) {
+         return new Build(activeBuild);
+     });
+ };
 
 
 module.exports = BuildFinder;

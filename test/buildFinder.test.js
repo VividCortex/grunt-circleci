@@ -12,7 +12,8 @@ module.exports = {
     },
 
     'finds by commit': function (test) {
-        test.strictEqual(finder.findByCommit('hashofthecommit') instanceof Build, true, 'should return an instance of Build');
+        var result = finder.findByCommit('hashofthecommit');
+        test.strictEqual(result[0] instanceof Build, true, 'should return an instance of Build');
         test.done();
     },
 

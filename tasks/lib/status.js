@@ -97,20 +97,28 @@ Checker.prototype = Object.create(Object.prototype, {
                     }
 
                     var finder = new BuildFinder(builds),
-                        build = finder.findByCommit(commit);
+                        builds = finder.findByCommit(commit);
 
-                    if (null === build) {
+                    if (null === builds) {
                         return checker.handleError('Build not found');
                     }
 
-                    return build;
+                    return builds;
                 }, this.handleError)
 
-                .then(function (build) {
-                    if (build.isSuccess()) {
+                .then(function (builds) {
+                    var successfulBuilds = 0;
+
+                    for (var i = 0; i < builds.length; i++) {
+                        if (builds[i].isSuccess()) {
+                            successfulBuilds++;
+                        } else if (builds[i].isFailure() || !checker.getOption('retryOnRunning')) {
+                            return checker.handleError('Invalid status for CircleCI build: "' + builds[i].getStatus() + '"')
+                        }
+                    }
+
+                    if (successfulBuilds === builds.length) {
                         return true;
-                    } else if (build.isFailure() || !checker.getOption('retryOnRunning')) {
-                        return checker.handleError('Invalid status for CircleCI build: "' + build.getStatus() + '"')
                     }
 
                     // Sleep for 10 seconds by default
