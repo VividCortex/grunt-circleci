@@ -1,14 +1,23 @@
 machine:
 
+  environment:
+    PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
+
   node:
     version: 0.10.22
 
 dependencies:
 
-  pre:
-    - npm install -p
+  cache_directories:
+    - ~/.cache/yarn
+
+  override:
+    - yarn
 
 test:
 
+  override:
+    - yarn test
+
   pre:
-    - ./node_modules/grunt-cli/bin/grunt jshint
+    - yarn lint
