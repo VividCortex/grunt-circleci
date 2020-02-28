@@ -31,7 +31,7 @@ In order to configure the plugin, you need to add a new section `circleci` to th
 grunt.initConfig({
   circleci: {
     token:    'MySuperSecretTokenGeneratedOnCircleCI'
-    username: 'VividCortex',
+    username: 'SolarWinds',
     project:  'grunt-circleci',
     commit:   'TheHashOfTheCommit'
   }
@@ -78,7 +78,7 @@ The time in milliseconds after which the check should fail if the build is still
 grunt.initConfig({
   circleci: {
     token:    'MySuperSecretTokenGeneratedOnCircleCI'
-    username: 'VividCortex',
+    username: 'SolarWinds',
     project:  'grunt-circleci',
     commit:   'TheHashOfTheCommit',
     options: {
@@ -105,7 +105,7 @@ If grunt is configured properly, you can use custom values for the commit hash, 
 grunt.initConfig({
   circleci: {
     token:    'MySuperSecretTokenGeneratedOnCircleCI'
-    username: 'VividCortex',
+    username: 'SolarWinds',
     project:  'grunt-circleci',
     commit:   grunt.option('commit')
   }
@@ -146,4 +146,4 @@ grunt check-build
 ```
 
 ## License
-Copyright (c) 2014 VividCortex. Licensed under the MIT license.
+Copyright (c) 2014 SolarWinds. Licensed under the MIT license.

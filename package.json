@@ -3,7 +3,7 @@
   "description": "Grunt plugin to check CircleCI build status",
   "version": "0.2.0",
   "homepage": "https://github.com/VividCortex/grunt-circleci",
-  "author": "VividCortex",
+  "author": "SolarWinds",
   "repository": {
     "type": "git",
     "url": "git://github.com/VividCortex/grunt-circleci.git"
