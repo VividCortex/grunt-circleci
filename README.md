@@ -1,3 +1,5 @@
+# IMPORTANT: This package has been DEPRECATED and is no longer maintained. If you wish to become a maintainer of this package please contact us.
+
 # grunt-circleci [![Circle CI](https://circleci.com/gh/VividCortex/grunt-circleci.png?style=badge)](https://circleci.com/gh/VividCortex/grunt-circleci)
 
 
